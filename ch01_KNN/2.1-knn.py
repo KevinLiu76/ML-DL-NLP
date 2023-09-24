@@ -17,6 +17,7 @@ def classify0(inX, dataSet, labels, k):
     # 排序
     sortedDistIndicies = distances.argsort() # 4*1
     classCount = {}
+    # 寻找最近的3个点，看哪个lable最多
     for i in range(k):
         voteIlabel = labels[sortedDistIndicies[i]] # A
         classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1 # A:1
